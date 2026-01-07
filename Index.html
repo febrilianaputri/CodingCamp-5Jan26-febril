@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+
+<div class="container">
+  <button id="theme-toggle">🌙</button>
+  <h1>✨MY To-Do List✨</h1>
+
+  <div class="grid-layout">
+
+    <!-- DASHBOARD -->
+    <div class="box dashboard-box">
+      <div class="box-title">📈Dashboard</div>
+      <div class="dashboard">
+        <div class="card">
+          <span id="total-count">0</span>
+          <small>🏷️Total</small>
+        </div>
+        <div class="card">
+          <span id="pending-count">0</span>
+          <small>⏳Pending</small>
+        </div>
+        <div class="card">
+          <span id="completed-count">0</span>
+          <small>✅Completed</small>
+        </div>
+        <div class="card danger">
+          <span id="overdue-count">0</span>
+          <small>⚠️Overdue</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- ADD TODO -->
+    <div class="box add-box">
+      <div class="box-title">➕Add New Task</div>
+      <form id="todo-form">
+        <input type="text" id="todo-input" placeholder="Enter your task">
+        <input type="date" id="date-input">
+        <button type="submit">Add Task</button>
+      </form>
+    </div>
+
+    <!-- FILTER -->
+    <div class="box filter-box">
+      <div class="box-title">🗂️Filter Tasks</div>
+      <input type="text" id="search-input" placeholder="🔍Search...">
+      <input type="month" id="month-filter">
+
+    <div class="filter">
+        <button class="active" data-filter="all">⭐All</button>
+        <button data-filter="pending">⏳Pending</button>
+        <button data-filter="completed">✅Completed</button>
+    </div>
+    </div>
+
+    <!-- TODO LIST -->
+    <div class="box list-box">
+      <div class="box-title">📋Your Tasks</div>
+      <ul id="todo-list"></ul>
+    </div>
+
+  </div>
+</div>
+
+<script src="JS/script.js"></script>
+</body>
+</html>
