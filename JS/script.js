@@ -4,7 +4,6 @@ const dateInput = document.getElementById("date-input");
 const todoList = document.getElementById("todo-list");
 const filterButtons = document.querySelectorAll(".filter button");
 const searchInput = document.getElementById("search-input");
-const monthFilter = document.getElementById("month-filter");
 
 const totalCount = document.getElementById("total-count");
 const pendingCount = document.getElementById("pending-count");
@@ -55,12 +54,6 @@ function renderTodos() {
   if (searchInput.value) {
     filtered = filtered.filter(t =>
       t.text.toLowerCase().includes(searchInput.value.toLowerCase())
-    );
-  }
-
-  if (monthFilter.value) {
-    filtered = filtered.filter(t =>
-      t.date.startsWith(monthFilter.value)
     );
   }
 
@@ -130,7 +123,6 @@ filterButtons.forEach(btn => {
 });
 
 searchInput.oninput = renderTodos;
-monthFilter.onchange = renderTodos;
 
 document.getElementById("theme-toggle").onclick = () =>
   document.body.classList.toggle("dark");
